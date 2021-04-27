@@ -1,0 +1,34 @@
+<?php
+
+return [
+   'BTC'=>[
+       'coin'=>'BTC',
+       'API_KEY'=>'$2y$10$.7RFb8TeewJOugnCb6vnHe00XZ2Z9.wmgmjCr1QCR72nN4pU9sBlC',
+       'PASSWORD'=>'qazwsx',
+   ],
+   'USDT'=>[
+       'coin'=>'USDT',
+       'API_KEY'=>'$2y$10$ZAoE2oo3WjxEocR/xFiIoOimisGWaPw6XwKJjrbmaO3rH2hZaim0a',
+       'PASSWORD'=>'qazwsx',
+   ],
+   'BCH'=>[
+       'coin'=>'BCH',
+       'API_KEY'=>'$2y$10$rqWkfhVeth6qkZDeUsGSJOOJByv9gsfnPk/InzJzAUXlUYQ.TvEDu',
+       'PASSWORD'=>'qazwsx',
+   ],
+   'LTC'=>[
+       'coin'=>'LTC',
+       'API_KEY'=>'$2y$10$CPgfQ9WyOrL.TTeJSiE6jOmN3XX2DthlR9UuPHZOaj48D/3vI3Lpq',
+       'PASSWORD'=>'qazwsx',
+   ],
+   'DOGE'=>[
+       'coin'=>'DOGE',
+       'API_KEY'=>'$2y$10$UzvXtyUc9RNxQPTZjO7Sq..ZddhiUfj8FvOkLvDBolUEdCxFFxec2',
+       'PASSWORD'=>'qazwsx',
+   ],
+   'DASH'=>[
+       'coin'=>'DASH',
+       'API_KEY'=>'$2y$10$5NojJpxduHhRf7j3lWTV8.ntz/IkhldiQdhaNh67cDq6s3YNNOEOS',
+       'PASSWORD'=>'qazwsx',
+   ],
+];
