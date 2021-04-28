@@ -1,157 +1,98 @@
+html {
+    height: 100%;
+}
 body {
     font-family: "iranyekan", "Itim", sans-serif;
+    background: #fff;
+    padding: 1rem;
+    height: 100%;
+    font-size: 0.8rem;
+}
+.btn,
+input {
+    font-size: 0.8rem;
+}
+.body-inner {
+    background: #ebf8fc;
+    border-radius: 35px;
+    min-height: 100%;
+    padding: 2rem 3rem;
+}
+.header {
+    color: #5c7eab;
+}
+.header-search i {
+    font-size: 1.2rem;
+    margin-left: 0.3rem;
+}
+.fc {
+    display: flex;
+    align-items: center;
+}
+.header-item {
+    flex-direction: column;
+    justify-content: center;
 }
 
-.card-img {
-    width: 50%;
+.header-item i {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
 }
-.rtl .list-check li::before {
-    top: 10px;
-    right: -30px;
-    left: auto;
+.header-faq {
+    background: #fff;
+    margin-top: -3rem;
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 2px 9px 0 rgba(82, 140, 164, 0.2);
 }
-
-.BTC {
-    background-color: #f7931a;
-    -webkit-mask: url(../img/crypto/BTC.svg) no-repeat center;
-    mask: url(../img/crypto/BTC.svg) no-repeat center;
+.faq-search {
+    border-color: #b9b9b9;
+    margin-top: 0.5rem;
 }
-.BCH {
-    background-color: #76ce1e;
-    transform: rotate(-15deg);
-    -webkit-mask: url(../img/crypto/BTC.svg) no-repeat center;
-    mask: url(../img/crypto/BTC.svg) no-repeat center;
+.form-control::placeholder {
+    color: #b9b9b9;
+    font-size: 0.8rem;
 }
-.ETH {
-    background-color: #62688f;
-    -webkit-mask: url(../img/crypto/ETH.svg) no-repeat center;
-    mask: url(../img/crypto/ETH.svg) no-repeat center;
+.header-faq i {
+    font-size: 1.2rem;
 }
-.DOGE {
-    background-color: #ba9f33;
-    -webkit-mask: url(../img/crypto/DOGE.svg) no-repeat center;
-    mask: url(../img/crypto/DOGE.svg) no-repeat center;
+.service {
+    margin-top: 4rem;
+    color: #f3f3f3;
 }
-.DASH {
-    background-color: #1c75bc;
-    -webkit-mask: url(../img/crypto/DASH.svg) no-repeat center;
-    mask: url(../img/crypto/DASH.svg) no-repeat center;
-}
-.LTC {
-    background-color: #838383;
-    -webkit-mask: url(../img/crypto/LTC.svg) no-repeat center;
-    mask: url(../img/crypto/LTC.svg) no-repeat center;
-}
-.USDT {
-    background-color: #2ca07a;
-    -webkit-mask: url(../img/crypto/USDT-alt.svg) no-repeat center;
-    mask: url(../img/crypto/USDT-alt.svg) no-repeat center;
-}
-.coin {
-    width: 4rem;
-    height: 4rem;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    margin: auto;
-}
-.shadow {
-    box-shadow: 20px 20px 60px #cacaca, -20px -20px 60px #ffffff !important;
-}
-
-.accordionTwo .panel-group {
-    margin-bottom: 0;
-}
-
-.accordionTwo .panel {
-    background-color: transparent;
-    box-shadow: 10px 10px 30px #cacaca, -10px -10px 30px #ffffff;
-    border-bottom: 10px solid transparent;
-    border-radius: 0;
-    margin: 5px 0;
-}
-
-.accordionTwo .panel-default {
-    border: 0;
-}
-
-.accordionTwo .panel-default > .panel-heading {
-    background: #fafafa;
-    border-radius: 0px;
-    border-color: #fafafa;
-}
-.accordionTwo .panel-default .panel-body {
+.service .banner {
+    background: rgb(28, 41, 58);
+    width: 100%;
+    border-radius: 1rem;
     padding: 1rem;
 }
-.accordion-wrap .panel-heading {
-    padding: 0px;
-    border-radius: 0px;
+.service .banner .title {
+    color: #a5def3;
+    text-shadow: 0 0 11px rgba(165, 222, 243, 0.5);
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
 }
-
-.panel-title {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 16px;
-    color: inherit;
+.service .banner .desc {
+    margin-bottom: 1.5rem;
 }
-
-.accordionTwo .panel .panel-heading a.collapsed {
-    color: #555;
-    background-color: #fff;
-    display: block;
-    padding: 20px;
-}
-
-.accordionTwo .panel .panel-heading a {
-    display: block;
-    padding: 20px;
-    color: #2196f3;
-}
-
-.accordion-wrap .panel .panel-heading a {
-    font-size: 14px;
-}
-
-.accordionTwo .panel-group .panel-heading + .panel-collapse > .panel-body {
-    border-top: 0;
-    padding-top: 0;
-    padding: 20px 20px 20px 30px;
-    background: #fafafa;
-    color: #333;
-    font-size: 14px;
-    line-height: 24px;
-}
-
-.accordionTwo .panel .panel-heading a:after {
-    content: "\2212";
-    color: #4285f4;
-    background: #fff;
-}
-
-.accordionTwo .panel .panel-heading a:after,
-.accordionTwo .panel .panel-heading a.collapsed:after {
-    font-family: "FontAwesome";
-    font-size: 14px;
-    float: right;
-    width: 21px;
-    display: block;
-    height: 21px;
-    line-height: 21px;
-    text-align: center;
-    border-radius: 50%;
+.btn-red {
+    background: #ed572f;
+    float: left;
     color: #fff;
+    border-radius: 0.5rem;
 }
-
-.accordionTwo .panel .panel-heading a.collapsed:after {
-    content: "\2b";
-    color: #333;
-    box-shadow: 10px 10px 30px #aaa, -10px -10px 30px #fafafa;
+.crypto .title {
+    color: #4a4a4a;
 }
-
-.accordionTwo .panel .panel-heading a:after {
-    content: "\2212";
-    color: #4285f4;
+.btn-crypto {
+    border: 1px solid #d6418f;
+    background: transparent;
+    color: #d6418f;
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 10px;
 }
-
-a:link {
-    text-decoration: none;
+.text-left {
+    text-align: left;
 }

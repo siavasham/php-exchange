@@ -1,19 +1,32 @@
-<section class="hero bg-top" id="hero" style="background: url({{ asset('/img/banner-4.png') }}) no-repeat; background-size: 100% 80%">
-  <div class="container">
-    <div class="row py-5">
-      <div class="col-lg-5 py-5">
-        <h2 class="font-weight-bold">{{ __('home.header') }}</h2>
-        <p class="my-4 text-muted">{{ __('home.header-desc') }}</p>
-        <ul class="list-inline mb-0">
-          <li class="list-inline-item mb-2 mb-lg-0">
-            <a class="btn btn-primary btn-lg px-4" href="https://panel.stronghold.live">
-                <i class="fas fa-handshake mr-3"></i>{{ __('home.join-us') }}
-            </a>
-          </li>
-        </ul>
+<div class="row header">
+    <div class="col-4 header-search fc">
+      <i class="fas fa-search" ></i>
+      {{__('home.search')}}
+    </div>
+    <div class="col-2 header-item fc">
+      <i class="fas fa-graduation-cap" ></i>
+      {{__('home.academy')}}
+    </div>
+    <div class="col-2 header-item fc">
+      <i class="fas fa-bullhorn"></i>
+      {{__('home.info')}}
+    </div>
+    <div class="col-4 header-faq">
+      <div class="row">
+        <div class="col-2">
+          <i class="far fa-comments" ></i>
+        </div>
+        <div class="col flex-grow-1">
+          {{__('home.ask-question')}}
+        </div>
+        <div class="col-2 text-left">
+          <i class="fas fa-angle-double-down" ></i>
+        </div>
       </div>
-      <div class="col-lg-7">
-        <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_q9mzugao.json"  background="transparent"  speed="1"  loop  autoplay></lottie-player>
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control faq-search"  placeholder="{{__('home.search-placeholder')}}">
+        </div>
       </div>
+    </div>
   </div>
-</section>
