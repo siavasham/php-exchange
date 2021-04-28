@@ -66,15 +66,17 @@ input {
     width: 100%;
     border-radius: 1rem;
     padding: 1rem;
+    height: 100%;
 }
 .service .banner .title {
     color: #a5def3;
     text-shadow: 0 0 11px rgba(165, 222, 243, 0.5);
     font-size: 1.5rem;
-    padding: 0.5rem 0;
+    padding: 0.7rem 0;
 }
 .service .banner .desc {
-    margin-bottom: 1.5rem;
+    margin: 0.5rem 0 1.6rem 1rem;
+    line-height: 2rem;
 }
 .btn-red {
     background: #ed572f;
@@ -95,4 +97,55 @@ input {
 }
 .text-left {
     text-align: left;
+}
+.chart {
+    direction: ltr;
+    width: 100%;
+    background: #fff;
+    border-radius: 25px;
+    margin: 5px;
+}
+text {
+    color: #369;
+}
+.chart svg {
+    height: 200px;
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: rgba(145, 145, 145, 0.425);
+    shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    display: none;
+}
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+.grid {
+    fill: none;
+    shape-rendering: crispEdges;
+    stroke: lightgrey;
+    opacity: 0.7;
+    stroke-width: 1px;
+}
+.segmentText {
+    cursor: pointer;
+}
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    height: 15px;
+    padding: 5px;
+    font: 12px sans-serif;
+    background: #ddd;
+    border: solid 1px #aaa;
+    border-radius: 8px;
+    pointer-events: none;
 }
