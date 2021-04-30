@@ -1,7 +1,7 @@
 
 
 <div class="row service">
-    <div class="col-6">
+  <div class="col-sm-12 col-md-6 mb-4">
       <div class="banner">
         <div class="row h-100">
             <div class="col">
@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-    <div class="col-6 crypto">
+    <div class="col-sm-12 col-md-6 mb-4 crypto">
         <div class="row justify-content-between">
             <div class="col-8">
                 <div class="title">{{__('home.crypto-glance')}}</div>

@@ -13,6 +13,7 @@ return array(
     'App\\Http\\Controllers\\CoinsController' => $baseDir . '/app/Http/Controllers/CoinsController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\HookController' => $baseDir . '/app/Http/Controllers/HookController.php',
     'App\\Http\\Controllers\\InvestController' => $baseDir . '/app/Http/Controllers/InvestController.php',
     'App\\Http\\Controllers\\PlansController' => $baseDir . '/app/Http/Controllers/PlansController.php',
     'App\\Http\\Controllers\\ReferralController' => $baseDir . '/app/Http/Controllers/ReferralController.php',

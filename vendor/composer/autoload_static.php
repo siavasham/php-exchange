@@ -593,6 +593,7 @@ class ComposerStaticInit964ac3e1bda254244e18f86a3155c3ad
         'App\\Http\\Controllers\\CoinsController' => __DIR__ . '/../..' . '/app/Http/Controllers/CoinsController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\HookController' => __DIR__ . '/../..' . '/app/Http/Controllers/HookController.php',
         'App\\Http\\Controllers\\InvestController' => __DIR__ . '/../..' . '/app/Http/Controllers/InvestController.php',
         'App\\Http\\Controllers\\PlansController' => __DIR__ . '/../..' . '/app/Http/Controllers/PlansController.php',
         'App\\Http\\Controllers\\ReferralController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReferralController.php',

@@ -1,63 +1,68 @@
-<div class="row pt-5 mt-5">
-    <div class="col-lg-5 mb-5 mb-lg-0">
-        <h2 class="mb-3">{{ __('home.wallet') }}</h2>
-        <p class="text-muted">{{ __('home.wallet-desc') }}</p>
-        <ul class="list-check">
-            <li class="text-muted mb-2">{{ __('home.wallet-desc-1') }}</li>
-            <li class="text-muted mb-2">{{ __('home.wallet-desc-2') }}</li>
-            <li class="text-muted mb-2">{{ __('home.wallet-desc-3') }}</li>
-        </ul>
-    </div>
-    <div class="col-lg-7">
-        <div class="row">
-            <div class="col-lg-4 col-sm-4 mb-4">
-                <div class="card border-0 shadow rounded-lg text-left px-2">
-                <div class="card-body">
-                    <div class="coin BTC" ></div>
-                    <h3 class="h5 font-weight-normal text-center mt-3">Bitcoin</h3>
-                </div>
-                </div>
+ <div class="coins cf">
+    <div class="courses cf" id="showcase">
+
+      <div class="course-item slide">
+        <div class="course-summary coin-card">
+          <div class="course-thumbnail">
+           <img src="{{ asset('/crypto/btc.svg') }}" />
+          </div>
+          <div class="course-info">
+            <div class="course-topic webdesign">Programming</div>
+            <h3 class="course-title">Ruby on Rails</h3>
+            <div class="course-meta">
+              <time class="course-date">Version</time>
+              <span class="course-duration">2.2</span>
             </div>
-            <div class="col-lg-4 col-sm-4 mb-4">
-                <div class="card border-0 shadow rounded-lg text-left px-2">
-                <div class="card-body">
-                    <div class="coin ETH" ></div>
-                    <h3 class="h5 font-weight-normal text-center mt-3">Ethereum</h3>
-                </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-4 mb-4">
-                <div class="card border-0 shadow rounded-lg text-left px-2">
-                <div class="card-body">
-                    <div class="coin BCH" ></div>
-                    <h3 class="h5 font-weight-normal text-center mt-3">Bitcoin Cash</h3>
-                </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-4 mb-4">
-                <div class="card border-0 shadow rounded-lg text-left px-2">
-                <div class="card-body">
-                    <div class="coin DOGE" ></div>
-                    <h3 class="h5 font-weight-normal text-center mt-3">Dogecoin</h3>
-                </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-4 mb-4">
-                <div class="card border-0 shadow rounded-lg text-left px-2">
-                <div class="card-body">
-                    <div class="coin DASH" ></div>
-                    <h3 class="h5 font-weight-normal text-center mt-3">Dash</h3>
-                </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-4 mb-4">
-                <div class="card border-0 shadow rounded-lg text-left px-2">
-                <div class="card-body">
-                    <div class="coin LTC" ></div>
-                    <h3 class="h5 font-weight-normal text-center mt-3">Litecoin</h3>
-                </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="course-item slide">
+        <div class="course-summary coin-card">
+          <div class="course-thumbnail">
+          </div>
+          <div class="course-info">
+            <div class="course-topic webdesign">Web</div>
+            <h3 class="course-title">HTML5 & CSS3</h3>
+            <div class="course-meta">
+              <time class="course-date">Version</time>
+              <span class="course-duration">3</span>
+            </div>
+          </div>
+          <span class="course-caption ion ion-closed-captioning"></span>
+        </div>
+      </div>
+
+      <div class="course-item slide">
+        <div class="course-summary coin-card">
+          <div class="course-thumbnail">
+          </div>
+          <div class="course-info">
+            <div class="course-topic computer">OS</div>
+            <h3 class="course-title">Linux</h3>
+            <div class="course-meta">
+              <time class="course-date">Version</time>
+              <span class="course-duration">14.10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-item slide">
+        <div class="course-summary coin-card">
+          <div class="course-thumbnail">
+          </div>
+          <div class="course-info">
+            <div class="course-topic code">Text Editor</div>
+            <h3 class="course-title">Atom</h3>
+            <div class="course-meta">
+              <time class="course-date">Version</time>
+              <span class="course-duration">1.0.11</span>
+            </div>
+          </div>
+          <span class="course-caption ion ion-closed-captioning"></span>
+        </div>
+      </div>
+
     </div>
-</div>
+  </div>

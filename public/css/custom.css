@@ -149,3 +149,104 @@ div.tooltip {
     border-radius: 8px;
     pointer-events: none;
 }
+
+.coins {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 90px;
+}
+.flickity-button flickity-prev-next-button next {
+    left: -30px;
+}
+.flickity-rtl .flickity-prev-next-button.previous {
+    right: -30px;
+}
+.coin-card {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    padding: 16px 18px 24px 19px;
+}
+.is-selected .coin-card {
+    background-color: #fff;
+    box-shadow: 2px 2px 10px 0 rgba(82, 140, 164, 0.22);
+    border-radius: 6px;
+}
+.courses {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+.course-item {
+    width: 250px;
+    padding-right: 2%;
+    padding-left: 2%;
+    margin-bottom: 30px;
+    float: right;
+}
+
+.course-thumbnail {
+    text-align: center;
+}
+.course-thumbnail img {
+    height: 50px;
+}
+.course-heading {
+    font-weight: 500;
+    font-size: 12px;
+    color: #aab2bd;
+    text-transform: uppercase;
+    text-align: center;
+}
+.course-info {
+    padding: 7%;
+    min-height: 140px;
+}
+.course-topic {
+    font-weight: 500;
+    color: #aab2bd;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.course-topic.photo {
+    color: #673ab7;
+}
+.course-topic.webdesign {
+    color: #009688;
+}
+.course-topic.computer {
+    color: #2196f3;
+}
+.course-topic.code {
+    color: #4caf50;
+}
+.course-topic.design {
+    color: #f44336;
+}
+.course-title {
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0 0 30%;
+}
+.course-meta {
+    color: #aab2bd;
+    font-weight: 300;
+    font-size: 11px;
+    position: absolute;
+    left: 7%;
+    bottom: 7%;
+}
+.course-duration:before {
+    display: inline-block;
+    content: "•";
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.course-caption {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    font-size: 18px;
+    color: #aab2bd;
+}
