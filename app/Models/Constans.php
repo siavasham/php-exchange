@@ -3,16 +3,16 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class Faq extends Model 
+class Constans extends Model 
 {
-    protected $table = 'faq';
+    protected $table = 'constans';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'question','answer'
+        'key','value'
     ];
 
     /**

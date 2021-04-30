@@ -7,8 +7,8 @@
             <div class="col">
             </div>
             <div class="col-7 info">
-                <div class="title"> {{__('home.smart-trading')}}</div>
-                <div class="desc"> {{__('home.smart-trading-desc')}}</div>
+                <div class="title">{{ $constans->trading }} </div>
+                <div class="desc">{{ $constans->tradingDesc }} </div>
                 <button type="button" class="btn btn-danger btn-red px-4">{{__('home.read-more')}}</button>
             </div>
         </div>
@@ -33,7 +33,7 @@
 <script id="rendered-js" >
     var Data = [
 {
-  "name": "INFOSYS",
+  "name": "BTC",
   "WeeklyData": [
   { "week": "06 Apr 2015", "value": 1120 },
   { "week": "13 Apr 2015", "value": 1240 },
@@ -42,7 +42,7 @@
 
 
 {
-  "name": "GOOGLE",
+  "name": "BCH",
   "WeeklyData": [
   { "week": "06 Apr 2015", "value": 1220 },
   { "week": "13 Apr 2015", "value": 1500 },
@@ -51,7 +51,7 @@
 
 
 {
-  "name": "HCL",
+  "name": "DOGE",
   "WeeklyData": [
   { "week": "06 Apr 2015", "value": 1020 },
   { "week": "13 Apr 2015", "value": 1350 },
@@ -60,27 +60,19 @@
 
 
 {
-  "name": "TCS",
+  "name": "XRP",
   "WeeklyData": [
   { "week": "06 Apr 2015", "value": 1320 },
   { "week": "13 Apr 2015", "value": 1280 },
   { "week": "20 Apr 2015", "value": 1530 },
   { "week": "27 Apr 2015", "value": 1600 }] },
-
-
-{
-  "name": "MICROSOFT",
-  "WeeklyData": [
-  { "week": "06 Apr 2015", "value": 1600 },
-  { "week": "13 Apr 2015", "value": 1450 },
-  { "week": "20 Apr 2015", "value": 1640 },
-  { "week": "27 Apr 2015", "value": 1750 }] }];
+];
 
 
 
 
 function fnDrawMultiLineChart(Data, DivID, RevenueName) {
-  var margin = { top: 20, right: 20, bottom: 30, left: 40 },
+  var margin = { top: 20, right: 0, bottom: 30, left: 50 },
   width = document.getElementById("chart").clientWidth - margin.left - margin.right,
   height = 200 - margin.top - margin.bottom;
 

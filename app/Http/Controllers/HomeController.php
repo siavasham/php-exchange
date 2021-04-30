@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\Plan; 
-use App\Models\Faq; 
+use App\Models\Constans; 
+use app\Library\ExchangeRate;
 
 class HomeController extends Controller
 {
@@ -18,8 +18,15 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
+        $exchangeRate = new ExchangeRate();
+        $sliders = $exchangeRate->getSliderCoin();
+        $temp = Constans::where('category','home')->get();
+        $constans = [];
+        foreach($temp as $t){
+           $constans[$t->key] =  $t->value;
+        }
         app()->setlocale('fa');
-        return view('home');
+        return view('home',['sliders'=>$sliders,'constans'=>(object)$constans]);
     }
 
 

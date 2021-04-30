@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ __('home.title') }}</title>    
+    <title>{{ $constans->title }}</title>    
     <meta name="description" content="{{ __('home.description') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </head>
   <body>
-      <div class="body-inner container ">
+      <div class="body-inner xcontainer ">
           @yield('content')
       </div>
       <script src="{{ asset(mix('/js/jquery.min.js')) }}"></script>

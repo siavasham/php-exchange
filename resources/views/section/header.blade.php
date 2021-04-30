@@ -1,7 +1,7 @@
 <div class="row header">
     <div class="col-4 header-search fc">
       <i class="fas fa-search" ></i>
-      {{__('home.search')}}
+      {{ $constans->search }}
     </div>
     <div class="col-2 header-item fc">
       <i class="fas fa-graduation-cap" ></i>
