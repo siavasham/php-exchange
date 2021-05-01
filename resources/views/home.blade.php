@@ -7,6 +7,7 @@
     @include('section.service')
     @include('section.coins')
     @include('section.trading')
+    @include('section.news')
    
 
 @endsection

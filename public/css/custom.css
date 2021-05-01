@@ -7,6 +7,7 @@ body {
     padding: 1rem;
     height: 100%;
     font-size: 0.8rem;
+    color: #4a4a4a;
 }
 .btn,
 input {
@@ -164,7 +165,7 @@ div.tooltip {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-top: 3rem;
 }
 .flickity-rtl .flickity-prev-next-button.next {
     left: -45px;
@@ -217,7 +218,9 @@ div.tooltip {
     text-align: center;
     margin-top: 1rem;
 }
-
+.trading {
+    margin-bottom: 4rem;
+}
 .trading-desc {
     display: flex;
     flex-direction: column;
@@ -227,7 +230,7 @@ div.tooltip {
     font-weight: bold;
     align-self: flex-start;
 }
-.trading .title {
+.trading .desc {
     text-align: justify;
     text-justify: inter-character;
 }
@@ -252,7 +255,7 @@ div.tooltip {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    padding: 8px 5px;
+    padding: 8px 3px 20px 3px;
 }
 .trade-counter {
     background: #fff;
@@ -262,10 +265,41 @@ div.tooltip {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: #5c7eab;
     font-weight: bold;
 }
 .trade-text {
     color: #fff;
+    font-size: 0.58rem;
+    text-align: center;
+}
+.safe {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+.safe-desc {
+    height: 200px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    padding: 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.safe-desc .title {
+    color: #528ca4;
+}
+.safe-item {
+    color: #5c7eab;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    height: 80px;
+    font-size: 0.8rem;
+}
+.safe-item img {
+    height: 45px;
 }
