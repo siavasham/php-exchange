@@ -3,17 +3,17 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class Plan extends Model 
+class Message extends Model 
 {
     public $timestamps = false;
-    protected $table = 'plans';
+    protected $table = 'messages';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'type','profit','invest'
+        'title','text'
     ];
 
     /**

@@ -5,80 +5,60 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Tymon\JWTAuth\Facades\JWTFactory;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller; 
 use App\Models\User; 
-use App\Models\TempUser; 
 use App\Models\Login; 
-use App\Models\Referral; 
+use App\Models\Token; 
 use Validator;
 
 class UserController extends Controller
 {
     public $successStatus = 200;
-
-    public function Register(Request $request){
-         $validator = Validator::make($request->all(), [ 
-            'name' => 'required', 
-            'email' => 'required|email', 
-            'password' => 'required',
-        ]);
-        if ($validator->fails()) { 
-            return response()->json(['error'=>$validator->errors()], 401);            
-        }
-        $credentials = $request->only('name','email','password','referral');
-        $res = [];
-        foreach(['email','name'] as $search){
-            $temp = User::where($search, $credentials[$search])->count();
-            if($temp> 0){
-                $res[$search] = ['validation.exist'];
-            }
-        }
-        if(count($res)){
-            return response()->json(['error' =>$res]); 
-        }
-        TempUser::where('email',$credentials['email'])->delete();
-        $user = TempUser::updateOrCreate($credentials);
-
-       
-        app()->setlocale('fa');
-        Mail::send('email.verify', ['code' => $user->code], function ($m) use ($user) {
-            $m->to($user->email, $user->name)->subject(__('emailVerification'));
-        });
-       
-        return response()->json(['success' => true]); 
-    }
     public function Login(Request $request){
          $validator = Validator::make($request->all(), [ 
-            'email' => 'required|email', 
-            'password' => 'required',
+            'phone' => 'required|regex:/(0)[0-9]/|not_regex:/[a-z]/|min:9', 
         ]);
         if ($validator->fails()) { 
             return response()->json(['error'=>$validator->errors()], 401);            
         }
       
-        $user = User::where('email',$request->email)->where('password',md5($request->password)) ->first();
+        $user = User::where('phone',$request->phone)->first();
         if(!$user){
-             return response()->json(['error' => 'wrong-user-pass']); 
+            $user = User::updateOrCreate(['phone'=>$request->phone,'status'=>true]);   
         }
-       
-        return  $this->makeLogin($user,$request);
+        if($user->status != true){
+            return response()->json(['error' => 'inactive-user']); 
+        }
+        $token = Token::create([
+            'user_id' => $user->id
+        ]);
+        
+        if ($token->sendCode()) {
+            return response()->json(['success' =>true]);
+        }
+        else{
+            return response()->json(['success' =>$token->code]);
+        }
     }
-    public function Active(Request $request){
+    public function Verify(Request $request){
          $validator = Validator::make($request->all(), [ 
-            'code' => 'required|regex:/[0-9]{6}/', 
+            'code' => 'required|regex:/[0-9]{5}/', 
+            'phone' => 'required|regex:/(0)[0-9]/|not_regex:/[a-z]/|min:9',
         ]);
         if ($validator->fails()) { 
             return response()->json(['error'=>$validator->errors()], 401);            
         }
-
-        $token = TempUser::where('email',$request->email)->orderByDesc('id') ->first();
+        $user = User::where('phone',$request->phone)->first();
+        if(!$user){
+            return response()->json(['error'=>'invalid-number']);
+        }
+        $token = Token::where('user_id',$user->id) ->orderByDesc('id') ->first();
         if($token){
             if($token->manyTrid()){
                 return response()->json(['error' => 'to-many-try']); 
             }
-            if($token->isVerified()){
-                return response()->json(['error' => 'code-is-used']); 
+            if(!$token->isValid()){
+                return response()->json(['error' => 'code-is-used-or-expired']); 
             }
             if($token->code != $request->code){
                 $token->increment('try');
@@ -87,19 +67,11 @@ class UserController extends Controller
             }
             $token->delete();
             
-            $credentials = ['name'=>strtolower($token->name),'email'=>strtolower($token->email),'password'=>$token->password,'lang'=>$token->lang];
-            $user = User::updateOrCreate($credentials);   
-            if($token->referral != ''){
-                $ref = User::where('name',$token->referral) ->first();
-                if($user){
-                    $credentials = ['user_id'=>$user->id,'referral'=>$ref->id];
-                    Referral::updateOrCreate($credentials);   
-                }
-            }
+            
             return  $this->makeLogin($user,$request);
              
         }
-        return response()->json(['error' => 'validation.email']); 
+        return response()->json(['error' => 'validation.code']); 
     }
     public function Me(Request $request){
         return response()->json(['success' => $request->user]); 
@@ -112,40 +84,9 @@ class UserController extends Controller
         return response()->json(['success' =>$user]);
     }
     public function Update(Request $request){
-        $credentials = $request->only('fullname','tell','lang');
+        $credentials = $request->only('name','email','address');
         User::where('id',$request->user->id)
             ->update($credentials);
-        return response()->json(['success' =>true]);
-    }
-    public function ChangePass(Request $request){
-        $validator = Validator::make($request->all(), [ 
-            'oldPassword' => 'required', 
-            'newPassword' => 'required',
-        ]);
-        
-        if ($validator->fails()) { 
-            return response()->json(['error'=>$validator->errors()], 401);            
-        }
-        $user = User::where('id',$request->user->id) ->where('password',md5($request->oldPassword)) ->first();
-        if(!$user){
-            return response()->json(['error' => 'wrong-user']); 
-        }
-        $user->password = md5($request->newPassword); 
-        $user->save();
-        return response()->json(['success' =>true]);
-    }
-    public function Forget(Request $request){
-        $validator = Validator::make($request->all(), [ 
-            'email' => 'required|email', 
-        ]);
-        if ($validator->fails()) { 
-            return response()->json(['error'=>'wrong-user'], 401);            
-        }
-        $user = User::where('email',$request->email) ->first();
-        if(!$user){
-            return response()->json(['error' => 'wrong-user']); 
-        }
-        
         return response()->json(['success' =>true]);
     }
 
@@ -154,7 +95,7 @@ class UserController extends Controller
         Login::create($credentials);
         $user_data = ['id'=>$user->id];
         $token = $this->generateToken($user_data);
-        return response()->json(['success' =>['token'=>$token,'name'=>$user->name,'lang'=>$user->lang]]);
+        return response()->json(['success' =>['token'=>$token,'name'=>$user->name,'phone'=>$user->phone]]);
     }
     function generateToken($user_data){
         $factory = JWTFactory::customClaims([

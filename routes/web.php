@@ -33,33 +33,16 @@ $router->get('/','HomeController@index');
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->group(['middleware' => 'jwt'], function () use ($router) {
         $router->post('me', 'UserController@Me');
-        $router->post('address', 'WalletController@Address');
-        $router->post('wallet', 'WalletController@Wallet');
-        $router->post('withdraw', 'WalletController@Withdraw');
-        $router->post('statistics', 'WalletController@Statistics');
-        $router->post('wallet-coin', 'WalletController@Coin');
-        $router->post('referrals','ReferralController@referrals');
-        $router->post('tickets','TicketController@tickets');
         $router->post('profile','UserController@Profile');
         $router->post('update-info','UserController@Update');
-        $router->post('change-password','UserController@ChangePass');
-        $router->post('new-ticket','TicketController@newTicket');
-        $router->post('view-ticket','TicketController@viewTicket');
-        $router->post('replay-ticket','TicketController@replayTicket');
-        $router->post('investing','InvestController@start');
-        $router->post('invest-history','InvestController@history');
+        $router->post('message', 'MessageController@List');
+        $router->post('credit-add', 'BankController@Add');
+        $router->post('credit-list', 'BankController@List');
+        $router->post('credit-update', 'BankController@Update');
+        $router->post('credit-delete', 'BankController@Delete');
     });
 
-    $router->post('register','UserController@Register');
     $router->post('login','UserController@Login');
-    $router->post('activate','UserController@Active');
-    $router->post('forget','UserController@Forget');
-    
-    $router->get('plans','PlansController@plans');
-    $router->get('plans/{plan}','PlansController@plan');
-    $router->get('coins','CoinsController@coins');
-
-    $router->post('hook','HookController@index');
-    $router->get('hook','HookController@get');
+    $router->post('verify','UserController@Verify');
 });
 

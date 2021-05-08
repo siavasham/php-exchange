@@ -3,16 +3,17 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class Transaction extends Model 
+class Bank extends Model 
 {
-    protected $table = 'transaction';
+    public $timestamps = false;
+    protected $table = 'banks';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'hook_id', 'user_id','coin','address','amount','type','data'
+        'user_id','code','number','iban'
     ];
 
     /**

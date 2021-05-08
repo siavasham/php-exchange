@@ -12,7 +12,7 @@ class User extends Model
      * @var array
      */
     protected $fillable = [
-        'name','email','password','lang'
+        'name','phone','status','verify'
     ];
 
     /**
@@ -20,17 +20,14 @@ class User extends Model
      *
      * @var array
      */
-    protected $hidden = ['password'];
+    protected $hidden = [];
 
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
     }
-    public static function boot()
-    {
-        parent::boot();
-        self::creating(function ($model) {
-            $model->password = md5($model->password);
-        });
-    }
+    // public function tokens()
+    // {
+    //     return $this->hasMany(Token::class,'id','user_id');
+    // }
 }
