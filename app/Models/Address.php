@@ -3,16 +3,16 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class Wallet extends Model 
+class Address extends Model 
 {
-    protected $table = 'wallet';
+    protected $table = 'address';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'user_id','coin',
+        'wallet_id','address',
     ];
 
     /**
@@ -26,12 +26,8 @@ class Wallet extends Model
     {
         parent::__construct($attributes);
     }
-    public function address()
+    public function wallet()
     {
-        return $this->hasMany(Address::class,'id','wallet_id');
+        return $this->belongsTo(Wallet::class,'wallet_id','id');
     }
-    // public function price()
-    // {
-    //     return $this->hasOne(Coin::class,'name','coin');
-    // }
 }

@@ -41,6 +41,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->post('credit-update', 'BankController@Update');
         $router->post('credit-delete', 'BankController@Delete');
     });
+    $router->get('coins', 'CoinsController@Coins');
 
     $router->post('login','UserController@Login');
     $router->post('verify','UserController@Verify');

@@ -10,7 +10,7 @@ class CoinsController extends Controller
 {
     public $successStatus = 200;
 
-    public function coins(Request $request){
+    public function Coins(Request $request){
         $coins = Coin::where('status', true)->get();
         return response()->json(['success' =>$coins]); 
     }
