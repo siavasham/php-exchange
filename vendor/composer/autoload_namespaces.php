@@ -7,5 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Webpatser\\Uuid' => array($vendorDir . '/webpatser/laravel-uuid/src'),
+    'Pleo' => array($vendorDir . '/pleonasm/merkle-tree/src'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
 );

@@ -6,11 +6,38 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'ded5f3340d6a5ed68dab6dfc1c25179f2759377d',
+    'reference' => 'e2af26a1d49a84f7b639638c968088e1f51015f9',
     'name' => 'laravel/lumen',
   ),
   'versions' => 
   array (
+    'bitwasp/bech32' => 
+    array (
+      'pretty_version' => 'v0.0.1',
+      'version' => '0.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e1ea58c848a4ec59d81b697b3dfe9cc99968d0e7',
+    ),
+    'bitwasp/bitcoin' => 
+    array (
+      'pretty_version' => 'v1.0.4',
+      'version' => '1.0.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '65ff8384a15e805effcf600fb08cef3a0fc63824',
+    ),
+    'bitwasp/buffertools' => 
+    array (
+      'pretty_version' => 'v0.5.7',
+      'version' => '0.5.7.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '133746d0b514e0016d8479b54aa97475405a9f1f',
+    ),
     'brick/math' => 
     array (
       'pretty_version' => '0.9.2',
@@ -19,6 +46,15 @@
       array (
       ),
       'reference' => 'dff976c2f3487d42c1db75a3b180e2b9f0e72ce0',
+    ),
+    'composer/semver' => 
+    array (
+      'pretty_version' => '1.7.2',
+      'version' => '1.7.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '647490bbcaf7fc4891c58f47b825eb99d19c377a',
     ),
     'cordoval/hamcrest-php' => 
     array (
@@ -78,6 +114,15 @@
       array (
       ),
       'reference' => '0dbf5d78455d4d6a41d186da50adc1122ec066f4',
+    ),
+    'fgrosse/phpasn1' => 
+    array (
+      'pretty_version' => 'v2.3.0',
+      'version' => '2.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '20299033c35f4300eb656e7e8e88cf52d1d6694e',
     ),
     'fzaninotto/faker' => 
     array (
@@ -408,7 +453,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'ded5f3340d6a5ed68dab6dfc1c25179f2759377d',
+      'reference' => 'e2af26a1d49a84f7b639638c968088e1f51015f9',
     ),
     'laravel/lumen-framework' => 
     array (
@@ -418,6 +463,15 @@
       array (
       ),
       'reference' => '6ed02d4d1a6e203b9e896bd105b2e838866f2951',
+    ),
+    'lastguest/murmurhash' => 
+    array (
+      'pretty_version' => '2.0.0',
+      'version' => '2.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4fb7516f67e695e5d7fa129d1bbb925ec0ebe408',
     ),
     'lcobucci/jwt' => 
     array (
@@ -436,6 +490,15 @@
       array (
       ),
       'reference' => '11df9b36fd4f1d2b727a73bf14931d81373b9a54',
+    ),
+    'mdanter/ecc' => 
+    array (
+      'pretty_version' => 'v0.5.2',
+      'version' => '0.5.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b95f25cc1bacc83a9f0ccd375900b7cfd343029e',
     ),
     'mockery/mockery' => 
     array (
@@ -627,6 +690,15 @@
       array (
       ),
       'reference' => 'c25f79895d27b6ecd5abfa63de1606b786a461a3',
+    ),
+    'pleonasm/merkle-tree' => 
+    array (
+      'pretty_version' => '1.0.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9ddc9d0a0e396750fada378f3aa90f6c02dd56a1',
     ),
     'psr/container' => 
     array (

@@ -10,6 +10,7 @@
     "type": "project",
     "require": {
         "php": "^7.2.5",
+        "bitwasp/bitcoin": "^1.0",
         "gladcodes/keygen": "^1.1",
         "guzzlehttp/guzzle": "7.0",
         "illuminate/mail": "^8.27",

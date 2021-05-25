@@ -28,8 +28,8 @@ class ExchangeRate {
         $this->newData = $diff > $this->refresh;
     }
  
-    public function getSliderCoin() {
-        $this->dbCoins = Coin::where('status', true)->where('slider', true)->get();
+    public function getCoins() {
+        $this->dbCoins = Coin::where('status', true)->get();
         return $this->dbCoins;
         if($this->newData){
             $temp = [];
@@ -65,4 +65,5 @@ class ExchangeRate {
         $this->setDataData($data);
         return $this->dbCoins;
     }
+
 }

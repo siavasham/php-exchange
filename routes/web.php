@@ -40,8 +40,13 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->post('credit-list', 'BankController@List');
         $router->post('credit-update', 'BankController@Update');
         $router->post('credit-delete', 'BankController@Delete');
+        $router->post('wallet', 'WalletController@Wallet');
+        $router->post('deposit', 'WalletController@Deposit');
+        $router->post('withdraw', 'WalletController@Withdraw');
+
     });
     $router->get('coins', 'CoinsController@Coins');
+    $router->get('bit', 'BitController@index');
 
     $router->post('login','UserController@Login');
     $router->post('verify','UserController@Verify');

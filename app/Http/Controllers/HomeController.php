@@ -19,7 +19,13 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $exchangeRate = new ExchangeRate();
-        $sliders = $exchangeRate->getSliderCoin();
+        $coins = $exchangeRate->getCoins();
+        $sliders = [];
+        foreach($coins as $coin){
+            if($coin->slider)
+            $sliders[]=$coin;
+        }
+        // $sliders  = array_filter($coins, function($v, $k) {return  $v['slider']==1 ;}, ARRAY_FILTER_USE_BOTH);
         $temp = Constans::where('category','home')->get();
         $constans = [];
         foreach($temp as $t){
