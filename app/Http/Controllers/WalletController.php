@@ -8,6 +8,7 @@ use App\Models\Wallet;
 use App\Models\Address; 
 use App\Models\Coin; 
 use App\Models\Transaction; 
+use App\Models\Currency; 
 use Validator;
 use app\Library\ExchangeRate;
 
@@ -15,7 +16,7 @@ class WalletController extends Controller
 {
     public $successStatus = 200;
 
-    public function deposit(Request $request){
+    public function PreDeposit(Request $request){
          $validator = Validator::make($request->all(), [ 
             'coin' => 'required', 
         ]);
@@ -27,16 +28,32 @@ class WalletController extends Controller
             $credentials = ['user_id'=>$request->user->id,'coin'=>$request->coin];
             $wallet = Wallet::updateOrCreate($credentials);   
         }
+        if($request->coin == "IR"){
+            return response()->json(['success' =>$wallet]); 
+        }
         $address = Address::where('wallet_id',$wallet->id)->where('status',true)->get();
         return response()->json(['success' =>$address]); 
     }
+    public function Deposit(Request $request){
+         $validator = Validator::make($request->all(), [ 
+            'coin' => 'required', 
+            'amount' => 'required', 
+        ]);
+        if ($validator->fails()) { 
+            return response()->json(['error'=>$validator->errors()], 401);            
+        }
+        $credentials = ['user_id'=>$request->user->id,'coin'=>$request->coin,'address'=>$request->address??'' ,'amount'=>$request->amount,'data'=>''];
+        $transaction = Transaction::create($credentials);
+        return response()->json(['success' =>$transaction]); 
+    }
     public function Wallet(Request $request){
         $wallet = Wallet::where('user_id',$request->user->id)->get();
-        
+        $currency = Currency::where('default',true)->first();
+
         $exchangeRate = new ExchangeRate();
         $coins = $exchangeRate->getCoins();
 
-        return response()->json(['success' =>['coins'=>$coins,'wallet'=>$wallet]]); 
+        return response()->json(['success' =>['coins'=>$coins,'wallet'=>$wallet,'currency'=>$currency]]); 
     }
     public function Withdraw(Request $request){
         $validator = Validator::make($request->all(), [ 

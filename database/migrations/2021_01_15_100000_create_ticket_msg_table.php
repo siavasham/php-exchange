@@ -19,7 +19,6 @@ class CreateTicketMsgTable extends Migration
             $table->integer('ticket_id');
             $table->text('text');
             $table->timestamp('added_on');
-
         });
     }
 
