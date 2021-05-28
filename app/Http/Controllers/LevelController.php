@@ -35,5 +35,9 @@ class LevelController extends Controller
         $wallet = Kyc::updateOrCreate($credentials);   
         return response()->json(['success' =>true]);
     }
+    public function Level(Request $request){
+        $level = Kyc::where('user_id',$request->user->id)->first();
+        return response()->json(['success' =>$level]); 
+    }
    
 }

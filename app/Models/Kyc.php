@@ -12,7 +12,7 @@ class Kyc extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id','cart','img'
+        'user_id','cart','img', 'status'
     ];
 
     /**

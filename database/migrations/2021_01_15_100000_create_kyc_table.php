@@ -18,6 +18,7 @@ class CreateKycTable extends Migration
             $table->integer('user_id');
             $table->string('cart',100);
             $table->string('img',100);
+            $table->enum('status', ['pending','rejected', 'accepted'])->default('pending');
             $table->timestamps();
         });
     }
