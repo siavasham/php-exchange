@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'e2af26a1d49a84f7b639638c968088e1f51015f9',
+    'reference' => '37904af65d41c44dc0bc212516b23c84d75fe188',
     'name' => 'laravel/lumen',
   ),
   'versions' => 
@@ -453,7 +453,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'e2af26a1d49a84f7b639638c968088e1f51015f9',
+      'reference' => '37904af65d41c44dc0bc212516b23c84d75fe188',
     ),
     'laravel/lumen-framework' => 
     array (
@@ -490,6 +490,24 @@
       array (
       ),
       'reference' => '11df9b36fd4f1d2b727a73bf14931d81373b9a54',
+    ),
+    'league/flysystem' => 
+    array (
+      'pretty_version' => '2.1.0',
+      'version' => '2.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a025209072f2d3a50b7bfd683a67fa0a2e6d2721',
+    ),
+    'league/mime-type-detection' => 
+    array (
+      'pretty_version' => '1.7.0',
+      'version' => '1.7.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3',
     ),
     'mdanter/ecc' => 
     array (
