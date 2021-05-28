@@ -45,6 +45,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->post('withdraw', 'WalletController@Withdraw');
         $router->post('deposit', 'WalletController@Deposit');
         $router->post('coins', 'CoinsController@Coins');
+        $router->post('level', 'LevelController@Level');
+        $router->post('kyc', 'LevelController@Kyc');
     });
 
     $router->post('login','UserController@Login');
