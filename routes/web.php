@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Artisan;
+
 // if (!defined('STDIN')) {
 //   define('STDIN', fopen('php://stdin', 'r'));
 // }
@@ -51,5 +52,12 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
     $router->post('login','UserController@Login');
     $router->post('verify','UserController@Verify');
+});
+
+$router->group(['prefix' => 'admin'], function () use ($router) {
+    $router->group(['middleware' => 'admin'], function () use ($router ) {
+        $router->post('me', 'AdminController@Me');
+    });
+    $router->post('login','AdminController@Login');
 });
 

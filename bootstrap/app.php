@@ -84,7 +84,8 @@ $app->middleware([
 // ]);
 
 $app->routeMiddleware([
-    'jwt' => App\Http\Middleware\JwtMiddleware::class
+    'jwt' => App\Http\Middleware\JwtMiddleware::class,
+    'admin' => App\Http\Middleware\JwtAdminMiddleware::class
 ]);
 
 /*
