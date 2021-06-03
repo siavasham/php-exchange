@@ -61,6 +61,8 @@ $router->group(['prefix' => 'admin'], function () use ($router) {
         $router->post('add', 'DataController@Add');
         $router->post('update', 'DataController@Update');
         $router->post('delete', 'DataController@Delete');
+        $router->post('add-news', 'NewsController@Add');
+        $router->post('update-news', 'NewsController@Update');
     });
     $router->post('login','AdminController@Login');
 });

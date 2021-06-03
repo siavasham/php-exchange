@@ -7,10 +7,12 @@ use Tymon\JWTAuth\Facades\JWTFactory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller; 
 use App\Models\User; 
+use App\Models\News; 
 use Validator;
 
 const model  = [
-    'users'=>User::class
+    'users'=>User::class ,
+    'news'=>News::class 
 ];
 class DataController extends Controller
 {
