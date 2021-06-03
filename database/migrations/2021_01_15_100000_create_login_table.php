@@ -1,10 +1,11 @@
--<?php
+@@ -1,33 +0,0 @@
+<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWalletTable extends Migration
+class CreateLoginTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +14,11 @@ class CreateWalletTable extends Migration
      */
     public function up()
     {
-        Schema::create('wallet', function (Blueprint $table) {
+        Schema::create('login', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
-            $table->string('coin',10);
-            $table->double('balance', 15, 8)->default(0);
-            $table->double('freezed', 15, 8)->default(0);
-            $table->timestamps();
+            $table->ipAddress('ip');
+            $table->timestamp('added_on');
         });
     }
 
@@ -30,6 +29,6 @@ class CreateWalletTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wallet');
+        Schema::dropIfExists('login');
     }
 }

@@ -1,10 +1,11 @@
+@@ -1,36 +0,0 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlansTable extends Migration
+class CreateAddressTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +14,12 @@ class CreatePlansTable extends Migration
      */
     public function up()
     {
-        Schema::create('plans', function (Blueprint $table) {
+        Schema::create('address', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->enum('type', ['daily', 'weekly','monthly','semiAnnualy','Annualy']);
-            $table->float('profit');
-            $table->double('invest', 15, 8);
-            $table->boolean('cancelable')->default(true);
+            $table->integer('wallet_id');
+            $table->string('type',20)->default('');
+            $table->string('address',100);
+            $table->string('tag',50)->nullable();
             $table->boolean('status')->default(true);
             $table->timestamp('added_on');
         });
@@ -31,6 +32,6 @@ class CreatePlansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('plans');
+        Schema::dropIfExists('address');
     }
 }

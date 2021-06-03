@@ -13,7 +13,7 @@ class Bank extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id','code','number','iban'
+        'user_id','code','card','number','iban','image','video'
     ];
 
     /**

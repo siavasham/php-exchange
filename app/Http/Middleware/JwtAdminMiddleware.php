@@ -22,7 +22,7 @@
                 $token = $request->get('token') ;
                 $parse = JWTAuth::parseToken($token);//->toUser() - authenticate
                 $payload = $parse->getPayload();
-                if(in_array('admin',$payload['user']))
+                if(array_key_exists('admin',$payload['user']))
                     $request->merge(['user'=>$payload['user']]);
                 else
                     return response()->json(['login' => 'Token is Invalid']);

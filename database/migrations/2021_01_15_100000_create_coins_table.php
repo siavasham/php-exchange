@@ -1,3 +1,4 @@
+@@ -1,38 +0,0 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -17,7 +18,11 @@ class CreateCoinsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name',10);
             $table->string('fullname',15);
+            $table->string('dname',15)->nullable();
             $table->double('price', 15, 8)->default(0);
+            $table->double('balance', 15, 8)->default(0);
+            $table->boolean('slider')->default(false);
+            $table->boolean('list')->default(false);
             $table->boolean('status')->default(true);
         });
     }

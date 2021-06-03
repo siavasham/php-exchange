@@ -57,6 +57,10 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 $router->group(['prefix' => 'admin'], function () use ($router) {
     $router->group(['middleware' => 'admin'], function () use ($router ) {
         $router->post('me', 'AdminController@Me');
+        $router->post('list', 'DataController@List');
+        $router->post('add', 'DataController@Add');
+        $router->post('update', 'DataController@Update');
+        $router->post('delete', 'DataController@Delete');
     });
     $router->post('login','AdminController@Login');
 });
