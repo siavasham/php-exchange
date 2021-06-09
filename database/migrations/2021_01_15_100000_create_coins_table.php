@@ -21,8 +21,7 @@ class CreateCoinsTable extends Migration
             $table->string('dname',15)->nullable();
             $table->double('price', 15, 8)->default(0);
             $table->double('balance', 15, 8)->default(0);
-            $table->boolean('slider')->default(false);
-            $table->boolean('list')->default(false);
+            $table->boolean('homepage')->default(false);
             $table->boolean('status')->default(true);
         });
     }

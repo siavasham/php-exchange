@@ -64,6 +64,7 @@ $router->group(['prefix' => 'admin'], function () use ($router) {
         $router->post('add-news', 'NewsController@Add');
         $router->post('update-news', 'NewsController@Update');
     });
+    $router->get('refresh-coins','CoinsController@Refresh');
     $router->post('login','AdminController@Login');
 });
 

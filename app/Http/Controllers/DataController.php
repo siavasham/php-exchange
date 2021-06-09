@@ -8,11 +8,15 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller; 
 use App\Models\User; 
 use App\Models\News; 
+use App\Models\Coin; 
+use App\Models\Constans; 
 use Validator;
 
 const model  = [
     'users'=>User::class ,
-    'news'=>News::class 
+    'coins'=>Coin::class ,
+    'news' =>News::class ,
+    'constans'=>Constans::class ,
 ];
 class DataController extends Controller
 {

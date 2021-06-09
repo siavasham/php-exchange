@@ -13,7 +13,7 @@ class Coin extends Model
      * @var array
      */
     protected $fillable = [
-        'name','fullname'
+        'name','fullname','dname','price','balance','status'
     ];
 
     /**

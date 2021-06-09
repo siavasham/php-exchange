@@ -30,7 +30,6 @@ class ExchangeRate {
  
     public function getCoins() {
         $this->dbCoins = Coin::where('status', true)->get();
-        return $this->dbCoins;
         if($this->newData){
             $temp = [];
             foreach($this->dbCoins as $coin){
@@ -41,12 +40,6 @@ class ExchangeRate {
         }
         else 
         return $this->dbCoins;
-    }
-    public function setDataData($data) {
-        foreach($this->dbCoins as $coin){
-            $coin->price = $data->{$coin->name}->{$this->currency};
-            $coin->save();
-        }
     }
     public function refreshData() {
         $client = new Client();
@@ -65,5 +58,12 @@ class ExchangeRate {
         $this->setDataData($data);
         return $this->dbCoins;
     }
-
+    public function setDataData($data) {
+        foreach($this->dbCoins as $coin){
+            if(@$data->{$coin->name}->{$this->currency}){
+                $coin->price = $data->{$coin->name}->{$this->currency};
+                $coin->save();
+            }
+        }
+    }
 }

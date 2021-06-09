@@ -18,5 +18,10 @@ class CoinsController extends Controller
         $currency = Currency::where('default',true)->first();
         return response()->json(['success' =>['coins' =>$coins,'currency'=>$currency]]); 
     }
+    public function Refresh(Request $request){
+        $exchangeRate = new ExchangeRate();
+        $coins = $exchangeRate->getCoins();
+        return response()->json(['success' =>true]); 
+    }
    
 }

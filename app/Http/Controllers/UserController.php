@@ -23,8 +23,13 @@ class UserController extends Controller
         }
       
         $user = User::where('phone',$request->phone)->first();
+        
         if(!$user){
-            $user = User::updateOrCreate(['phone'=>$request->phone,'status'=>true]);   
+            $user = User::updateOrCreate(['phone'=>$request->phone,'status'=>true]);
+            $data = ['type'=>'register'];   
+        }
+        else{
+            $data = ['type'=>'login'];   
         }
         if($user->status != true){
             return response()->json(['error' => 'inactive-user']); 
@@ -34,10 +39,10 @@ class UserController extends Controller
         ]);
         
         if ($token->sendCode()) {
-            return response()->json(['success' =>true]);
+            return response()->json(['success' =>$data]);
         }
         else{
-            return response()->json(['success' =>$token->code]);
+            return response()->json(['success' =>$data]);
         }
     }
     public function Verify(Request $request){
